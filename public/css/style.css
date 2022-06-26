@@ -1,0 +1,140 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body{
+       min-height:  100vh;
+       width: 100vw;
+       background-image: linear-gradient(rgb(0,0,0,0.5),rgb(0,0,0,0.7)),url(image.jpg);
+       background-size: cover;
+  }
+
+#main{
+    width: 100vw;
+    background-size: cover;
+}
+
+
+.forecast{
+    width: 50%;
+    height: fit-content;
+    background-color: white;
+    border-radius: 10px;
+    border: none;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 20px;
+    margin-bottom: 4%;
+}
+
+.seven-days{
+    width: 100%;
+}
+
+.eachDay p{
+    display: inline;
+    margin-left: 2px;
+}
+
+.left-align1{
+    margin-right: auto;
+}
+
+.left-align .right-align{
+    display: inline;
+}
+
+.left-align{
+    margin-right: auto;
+    margin-left: auto;
+}
+
+ .right-align{
+    margin-left: auto;
+}
+
+
+/* ------------------- Footer -------------------  */
+
+#footer{
+    padding: 50px 0 30px;
+    margin-top: auto;
+}
+
+hr{
+    width: 100%;
+    border: 0;
+    border-top: 1px solid black;
+}
+
+.footer-row{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.footer-left-call{
+    flex-basis: 50%;
+    margin-top: 30px;
+}
+
+.footer-right-call{
+    flex-basis: 35%;
+    margin-top: 30px;
+}
+
+.footer-links{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.link-title h4{
+    color:black;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+.link-title small{
+    font-size: 13px;
+    color:black;
+}
+
+.footer-info{
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.footer-info img{
+width: 100px;
+}
+
+.footer-info button{
+    padding: 12px 38px;
+    margin-top: 20px;
+    font-size: 10px;
+}
+
+.copyright-text, .footer-logo{
+    flex-basis: 40%;
+}
+
+
+
+@media only screen and (max-width:770px){
+
+    .footer-row{
+        margin-top: 2%;
+    }
+
+    .footer-left-call , .footer-right-call{
+        flex-basis: 100%;
+    }
+}
+
+

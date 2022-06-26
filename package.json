@@ -1,0 +1,28 @@
+{
+  "name": "weather",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "express": "^4.17.1",
+    "geolocation": "^0.0.0",
+    "hbs": "^4.1.2",
+    "node-fetch": "^2.6.1",
+    "node-navigator": "^1.0.1",
+    "weather": "file:"
+  },
+  "scripts": {
+    "start": "nodemon index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RakshitKhullar/Weather-Forecast.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/RakshitKhullar/Weather-Forecast/issues"
+  },
+  "homepage": "https://github.com/RakshitKhullar/Weather-Forecast#readme"
+}

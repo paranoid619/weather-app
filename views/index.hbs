@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Forecast </title>
+    <link rel="icon" type="image/png" href="css/sunrise-icon.png">
+    <link rel = "stylesheet" href = "https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel = "stylesheet" href ="css/style.css" >
+</head>
+<body>
+ 
+  
+
+    
+    <section id = "main">
+
+      <br> <br><br><br>
+
+      <div>
+      <form action='/' method="POST" id = "city-form"  class="d-flex" style="margin-left: 30%;">
+        <input class="form-control me-2" name="city" type="search"  placeholder="Search City" style="border-radius: 30px;width: 50%;">
+        <input type="text" name="latitude" id="lat" style="display: none;">
+        <input type="text" name="longitude" id="long" style="display: none;">
+        <button type="submit" class="btn btn-dark" id="searchButton" style="border-color: white;padding: 10px;">Search</button>
+      </form>
+    </div>
+
+    <br><br><br>
+
+    <div class="forecast">
+        
+      <div style="display: inline;">
+      <p> <b style="font-size: 23px;">Today's Weather -  <span style="width: fit-content;">{{city}}</span> </p> </b>
+          <hr>
+       </div>
+
+
+        <div class="seven-days">
+
+          <div class="eachDay" >
+            
+            <div id="lessinfoForecast" style="display: flex;">
+            <div class="left-align1">
+            <p id= "Date" ></p> &nbsp; 
+
+            <p >{{maxTemprature}}</p>°/<p>{{minTemprature}}</p>°&nbsp;
+
+            <p >{{sky}} </p>
+            </div>
+
+            <div class= "right-align">
+              <b> Humidity- </b> <p > {{Humidity}} </p>% &nbsp; &nbsp;
+
+              <img src = "css/wind-icon.png" style="height: 23px;width: 23px;"> <p >{{windDirection}} </p> 
+
+            <p> {{windSpeed}} </p>Km/hr &nbsp; &nbsp;
+            </div>
+
+            <i class="fa fa-chevron-down" id = "downIcon" style="cursor: pointer;color: blue;"></i> 
+            </div>
+
+            <div id="moreinfoForecast" style="display: none;">
+              <i class="fa fa-chevron-up" id = "upIcon" style="cursor: pointer;color: blue;float: right;"></i> 
+
+              <div style="display: flex;">
+
+                <div class="left-align"> 
+                  
+                  <p id= "Date1" > </p> 
+                  <div style="display: flex;">
+
+                 <h4  style="font-size: 30px;"> <p>{{maxTemprature}} </p>° / <p >{{minTemprature}}</p>° </h4> &nbsp; &nbsp;
+
+                  <p  style="font-size: 20px;">{{sky}}</p> &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; 
+
+                  <div style="display: block;">
+                  <b> Humidity- </b> <p > {{Humidity}}</p>% <br>
+
+                    <div style="display: flex;">
+                    
+                      <img src = "css/wind-icon.png" style="height: 23px;width: 23px;"> <p > {{windDirection}} </p> &nbsp;
+
+                      <p> {{windSpeed}} </p> Km/hr
+                    </div>
+                  </div>
+
+                  </div>
+
+                  <div class = "table" style="border-radius: 5px; height: fit-content; border: 2px solid rgba(116, 115, 115, 0.466); width:fit-content;">
+
+                    <div style="display: flex;">
+                      &nbsp;&nbsp;&nbsp; 
+
+                      <img src = "css/sunrise-icon.png" style="height: 30px;width: 40px;"><p> {{sunrise1}}  </p>&nbsp; &nbsp;&nbsp; &nbsp;
+
+                      <img src = "css/sunset-icon.png" style="height: 30px;width: 40px;"><p> {{sunset1}} </p> &nbsp; &nbsp;&nbsp; &nbsp;
+
+                    </div>
+
+                  </div>
+                 
+                </div>
+
+                &nbsp;&nbsp;
+
+                <!-- <div class= "right-align">
+
+                  <p id= "Date" > Today</p> | Night
+
+                  <div style="display: flex;">
+
+                  <h4 id= "morning-temprature" style="font-size: 30px;"> 28°</h4>  &nbsp; &nbsp;
+
+                  <p id= "Sky" style="font-size: 20px;"> Partly Cloudy</p> &nbsp; &nbsp;&nbsp; &nbsp;&nbsp;  
+
+                  <div style="display: block;">
+                    <p id= "Rainfall"> <i class="fa fa-tint" style="color: blue;"></i>&nbsp;  2%</p> &nbsp; &nbsp; <br>
+
+                    <div style="display: flex;">
+                    
+                      <p id= "Wind-direction"> <img src = "css/wind-icon.png" style="height: 23px;width: 23px;"> SSW</p> &nbsp;
+
+                      <p id= "Wind-speed"> 11 Km/hr</p>
+                    </div>
+                  </div>
+
+                  </div>
+
+                  <div class = "table" style="border-radius: 5px; height: fit-content; border: 2px solid rgba(116, 115, 115, 0.466); width: 95%;">
+
+                    <div style="display: flex;">
+                      &nbsp;&nbsp;
+                      <p id="Humidity"> <img src = "css/humidity-icon.png" style="height: 40px;width: 40px;"> 50%</p> &nbsp; &nbsp;
+
+                      <p id="Sunrise"> <img src = "css/moonrise-icon.png" style="height: 40px;width: 40px;"> 02:23 </p>&nbsp; &nbsp;
+
+                      <p id="Sunset"> <img src = "css/moonset-icon.png" style="height: 40px;width: 40px;"> 15:48 </p> &nbsp; &nbsp;
+
+                    </div>
+
+                  </div>
+
+                </div> -->
+
+              </div>
+
+            </div>
+         
+          </div>
+          <hr>    
+          
+        </div>
+      
+    </div>
+
+    </section>
+
+
+        </div>
+      </div>
+      <br><br>
+    </section>
+
+
+
+    <script src = "https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js"></script>
+
+    <script>
+
+      document.getElementById("downIcon").onclick = function(){
+        document.getElementById("lessinfoForecast").style.display = "none";
+        document.getElementById("moreinfoForecast").style.display = "block";
+      }
+
+      document.getElementById("upIcon").onclick = function(){
+        document.getElementById("lessinfoForecast").style.display = "flex";
+        document.getElementById("moreinfoForecast").style.display = "none";
+      }
+
+
+    // Fetching Location
+
+  var finding_pos=`{{pos}}`;
+    function geoFindMe() {
+      function success(position) {
+        const latitude = position.coords.latitude;
+        const longitude = position.coords.longitude;
+        document.getElementById('lat').value = latitude;
+        document.getElementById('long').value = longitude;
+        document.getElementById('city-form').submit();
+        console.log(latitude, " and  ", longitude);
+      }
+      function error() {
+        alert("Unable to Fetch your location, Please enter your city name");
+        console.log(error);
+      }
+      if (!navigator.geolocation) {
+        alert('Geolocation is not supported by your browser, Please enter your city name');
+      } else {
+        navigator.geolocation.getCurrentPosition(success, error);
+      }
+    }
+    
+    if(finding_pos=='true'){
+    geoFindMe();
+    }
+
+
+// date,time
+      const getCurrentDay = () => {
+        var weekday = new Array(7);
+        weekday[0] = "Sun";
+        weekday[1] = "Mon";
+        weekday[2] = "Tue";
+        weekday[3] = "Wed";
+        weekday[4] = "Thur";
+        weekday[5] = "Fri";
+        weekday[6] = "Sat";
+
+        let currentTime = new Date();
+        let day = weekday[currentTime.getDay()];
+        return day;
+      };
+
+      const getCurrentTime = () => {
+        var months = [
+          "Jan",
+          "Feb",
+          "Mar",
+          "Apr",
+          "May",
+          "June",
+          "July",
+          "Aug",
+          "Sept",
+          "Oct",
+          "Nov",
+          "Dec",
+        ];
+
+        var now = new Date();
+        var month = months[now.getMonth() + 1];
+        var date = now.getDate();
+
+        let hours = now.getHours();
+        let mins = now.getMinutes();
+
+        let periods = "AM";
+
+        if (hours > 11) {
+          periods = "PM";
+          if (hours > 12) hours -= 12;
+        }
+        if (mins < 10) {
+          mins = "0" + mins;
+        }
+
+        return `${month} ${date} | ${hours}:${mins}${periods}`;
+      };
+   
+      document.getElementById('Date').innerHTML = getCurrentDay() + " | " + getCurrentTime();
+      document.getElementById('Date1').innerHTML = getCurrentDay() + " | " + getCurrentTime();
+
+       
+      </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
